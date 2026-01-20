@@ -46,7 +46,7 @@ foreach ($repo in $repos) {
 cd ../
 
 # 3. Build the code combiner project
-Write-Host "`nBuilding codecombiner..." -ForegroundColor Cyan
+#Write-Host "`nBuilding codecombiner..." -ForegroundColor Cyan
 
-& .\Build-CodeCombiner.ps1
-Write-Host "Build completed successfully!" -ForegroundColor Green
+#& .\Build-CodeCombiner.ps1
+#Write-Host "Build completed successfully!" -ForegroundColor Green
