@@ -10,7 +10,7 @@
 $orgName = Read-Host -Prompt "Enter GitHub organization name"
 
 Write-Host "`nListing repositories for $orgName..." -ForegroundColor Cyan
-& .\List-GitHubRepos.ps1 -OrgName $orgName
+& .\_callable_List-GitHubRepos.ps1 -OrgName $orgName
 
 # Check if the output file was created successfully
 if (-not (Test-Path -Path "RepositoryListOutput.txt")) {
@@ -37,7 +37,7 @@ foreach ($repo in $repos) {
 
     Write-Host "Downloading repository: $repositoryUrl" -ForegroundColor Yellow
 
-    & .\Download-GitHubRepo.ps1 `
+    & .\_callable_Download-GitHubRepo.ps1 `
         -RepositoryUrl $repositoryUrl `
         -DestinationPath $downloadPath `
         -Branch "main"
@@ -45,8 +45,8 @@ foreach ($repo in $repos) {
 
 cd ../
 
-# 3. Build the code combiner project
-#Write-Host "`nBuilding codecombiner..." -ForegroundColor Cyan
+# 3. Build the code-combiner project
+Write-Host "`nBuilding code-combiner..." -ForegroundColor Cyan
 
-#& .\Build-CodeCombiner.ps1
-#Write-Host "Build completed successfully!" -ForegroundColor Green
+& .\_callable_build-CodeCombiner.ps1
+Write-Host "Build completed successfully!" -ForegroundColor Green

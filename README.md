@@ -1,19 +1,24 @@
-Orchestrate.ps1 isn't done yet. Some code was omitted.
-
-- Downloads all public repositories of an organization.
-- Converts all the code to txt documents
-
-## TODO
-Finish the code-to-txt converter.
-
 ## Example usage:
-
 ```
 .\Orchestrate.ps1 dotnet
 ```
 
+- Downloads all public repositories of an organization.
+- Buildes a C# application
+- Converts all the code to `.txt` documents
+- Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments:
+```
+"cs" => "/* ========================================================================================================================= */",
+"vb" => "' ========================================================================================================================== ",
+"js" or "ts" => "// =========================================================================================================================== ",
+"py" => "# ============================================================================================================================ ",
+"java" => "/** ========================================================================================================================= */",
+_ => "// =========================================================================================================================== ",
+```
+
+
 ### Output
-#### RepositoryListOutput.txt and /Repos folder
+#### RepositoryListOutput.txt and downloaded /Repos folder
 ```
 android-samples
 cecil
@@ -292,9 +297,3 @@ comment-pipeline
 XAMLStudio
 tutorial-codespace
 ```
-#### Downloaded /Repos 
-
-![Example Image of the Repos Folder](ReposFolderExampleImage.png)
-
-
-

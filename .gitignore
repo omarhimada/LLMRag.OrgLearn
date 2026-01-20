@@ -1,9 +1,3 @@
 RepositoryListOutput.txt
 /Repos
-.vs/ProjectSettings.json
-.vs/slnx.sqlite
-.vs/VSWorkspaceState.json
-.vs/LLMRag.OrgLearn.slnx/FileContentIndex/4da1023d-7e9c-4bb4-9888-35df30c846ea.vsidx
-.vs/LLMRag.OrgLearn.slnx/FileContentIndex/919580d0-a9c4-450e-9488-07df00ae8b28.vsidx
-.vs/LLMRag.OrgLearn.slnx/v18/.wsuo
-.vs/LLMRag.OrgLearn.slnx/v18/DocumentLayout.json
+/.vs

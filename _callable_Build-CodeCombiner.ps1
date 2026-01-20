@@ -101,11 +101,17 @@ internal class FileInfoEntry {
 "@
 
 # Replace the generated Program.cs with our full code
-$programCsPath = Join-Path $projectDir CodeCombinerApp Program.cs
+$appPath = "CodeCombinerApp"
+$programCsPath = Join-Path -Path $appPath "Program.cs"
 Set-Content -Path $programCsPath -Value $programCode -Force
 
-# Build the application (this will use the .NET CLI)
-dotnet build
+$csproj = "$appPath/CodeCombinerApp.csproj"
 
-Write-Host "Build completed. To run, use:"
-Write-Host "  dotnet run --path $projectDir -- <your_source_directory>"
+# Build the application (this will use the .NET CLI)
+dotnet build $csproj
+
+cd ../
+
+Write-Host $PWD
+
+dotnet run --project $csproj
