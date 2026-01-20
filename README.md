@@ -1,13 +1,19 @@
 Orchestrate.ps1 isn't done yet. Some code was omitted.
 
+- Downloads all public repositories of an organization.
+- Converts all the code to txt documents
+
+## TODO
+Finish the code-to-txt converter.
+
 ## Example usage:
 
 ```
-.\List-GitHubRepos.ps1 dotnet
+.\Orchestrate.ps1 dotnet
 ```
 
 ### Output
-#### RepositoryListOutput.txt
+#### RepositoryListOutput.txt and /Repos folder
 ```
 android-samples
 cecil
@@ -289,5 +295,6 @@ tutorial-codespace
 #### Downloaded /Repos 
 
 ![Example Image of the Repos Folder](ReposFolderExampleImage.png)
+
 
 
