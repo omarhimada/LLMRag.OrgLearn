@@ -1,4 +1,4 @@
-## Example usage: [org @ ](https://github.com/dotnet)
+## Example usage: [dotnet org @ github.com/dotnet](https://github.com/dotnet)
 ```
 .\Orchestrate.ps1 dotnet
 ```
