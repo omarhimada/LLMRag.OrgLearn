@@ -17,7 +17,7 @@ _ => "// =======================================================================
 ```
 - Then you give your LLM the final `combined_output.txt` document and they'll learn whatever was missing.
 
-### Example output from the `dotnet` [org @ ](https://github.com/dotnet)
+### Example output from the [dotnet org](https://github.com/dotnet)
 #### RepositoryListOutput.txt and downloaded /Repos folder
 ```
 android-samples
