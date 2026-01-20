@@ -13,103 +13,90 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-class FileInfoEntry
-{
-    public string OriginalPath { get; set; }
-    public string ConvertedPath { get; set; }
-    public string FileExtension { get; set; } // stores original extension without dot
+class Program {
+	static void Main(string[] args) {
+		string currentDirectory = Directory.GetCurrentDirectory();
+
+		string targetDirectory = Path.Combine(currentDirectory, "Repos");
+		CodeFileConverter cfc = new();
+		List<FileInfoEntry> list = cfc.ConvertFilesToTxt(targetDirectory);
+
+		List<FileInfoEntry> fileList = list;
+		Console.WriteLine($"{cfc.GetType().Name} created with extension list {string.Join("	", cfc._codeExtensions)}");
+
+		CodeCombiner combiner = new();
+		string outputPath = combiner.CombineFiles(fileList, "combined_output.txt");
+
+		Console.WriteLine($"Combined file created at: {outputPath}");
+	}
 }
 
-public class CodeFileConverter
-{
-    private readonly HashSet<string> _codeExtensions = new HashSet<string>
-    {
-        ".cs", ".vb", ".js", ".ts", ".py", ".java", ".cpp", ".c", ".h", ".hpp"
-    };
+internal class CodeFileConverter {
+	internal readonly HashSet<string> _codeExtensions =
+	[
+		".cs", ".vb", ".js", ".ts", ".py", ".java", ".cpp", ".c", ".h", ".hpp"
+	];
 
-    public List<FileInfoEntry> ConvertFilesToTxt(string rootDirectory)
-    {
-        var fileList = new List<FileInfoEntry>();
+	internal List<FileInfoEntry> ConvertFilesToTxt(string rootDirectory) {
+		List<FileInfoEntry> fileList = [];
 
-        foreach (var filePath in Directory.EnumerateFiles(rootDirectory, "*", SearchOption.AllDirectories))
-        {
-            string extension = Path.GetExtension(filePath).ToLower();
-            if (_codeExtensions.Contains(extension))
-            {
-                
-                string convertedPath = Path.ChangeExtension(filePath, ".txt");
-                File.Copy(filePath, convertedPath, true);
+		foreach (string filePath in Directory.EnumerateFiles(rootDirectory, "*", SearchOption.AllDirectories)) {
+			string extension = Path.GetExtension(filePath).ToLower();
+			if (_codeExtensions.Contains(extension)) {
+				string convertedPath = Path.ChangeExtension(filePath, ".txt");
+				File.Copy(filePath, convertedPath, true);
 
-                var entry = new FileInfoEntry
-                {
-                    OriginalPath = filePath,
-                    ConvertedPath = convertedPath,
-                    FileExtension = extension.Substring(1)
-                };
-                fileList.Add(entry);
-            }
-        }
+				FileInfoEntry entry = new() {
+					OriginalPath = filePath,
+					ConvertedPath = convertedPath,
+					FileExtension = extension.Substring(1)
+				};
+				fileList.Add(entry);
+			}
+		}
 
-        return fileList;
-    }
+		return fileList;
+	}
 }
 
-public class CodeCombiner
-{
-    public string CombineFiles(List<FileInfoEntry> fileList, string outputPath)
-    {
-        var result = new StringBuilder();
+internal class CodeCombiner {
+	internal string CombineFiles(List<FileInfoEntry> fileList, string outputPath) {
+		StringBuilder result = new();
 
-        foreach (var file in fileList)
-        {
-            if (!File.Exists(file.ConvertedPath))
-                continue;
+		foreach (FileInfoEntry file in fileList) {
+			if (!File.Exists(file.ConvertedPath))
+				continue;
 
-            string content = File.ReadAllText(file.ConvertedPath);
+			string content = File.ReadAllText(file.ConvertedPath);
 
-            // Add distinguishing comment between files
-            if (result.Length > 0)
-            {
-                result.AppendLine();
-                result.AppendLine(GetDistinguishingComment(file.FileExtension));
-                result.AppendLine();
-            }
+			// Add distinguishing comment between files
+			if (result.Length > 0) {
+				_ = result.AppendLine();
+				_ = result.AppendLine(GetDistinguishingComment(file.FileExtension));
+				_ = result.AppendLine();
+			}
 
-            result.AppendLine(content);
-        }
+			_ = result.AppendLine(content);
+		}
 
-        [System.IO.Directory]::CreateDirectory([System.IO.Path]::GetDirectoryName(outputPath))
-        File.WriteAllText(outputPath, result.ToString())
-        return outputPath
-    }
+		File.WriteAllText(outputPath, result.ToString());
+		return outputPath;
+	}
 
-    private string GetDistinguishingComment(string fileType)
-    {
-        switch (fileType.ToLower())
-        {
-            case "cs":
-                return "/* ========================================================================================================================= */";
-            case "vb":
-                return "' ========================================================================================================================== ";
-            case "js":
-            case "ts":
-                return "// =========================================================================================================================== ";
-            case "py":
-                return "# ============================================================================================================================ ";
-            case "java":
-                return "/** ========================================================================================================================= */";
-            default:
-                return "// =========================================================================================================================== ";
-        }
-    }
+	internal string GetDistinguishingComment(string fileType) => fileType.ToLower() switch {
+		"cs" => "/* ========================================================================================================================= */",
+		"vb" => "' ========================================================================================================================== ",
+		"js" or "ts" => "// =========================================================================================================================== ",
+		"py" => "# ============================================================================================================================ ",
+		"java" => "/** ========================================================================================================================= */",
+		_ => "// =========================================================================================================================== ",
+	};
 }
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Omitted
-    }
+internal class FileInfoEntry {
+	internal required string OriginalPath { get; set; }
+	internal required string ConvertedPath { get; set; }
+	internal required string FileExtension { get; set; }
 }
 "@
 
