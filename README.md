@@ -1,10 +1,10 @@
-## Example usage:
+## Example usage: [org @ ](https://github.com/dotnet)
 ```
 .\Orchestrate.ps1 dotnet
 ```
 
 - Downloads all public repositories of an organization into a `/Repos` directory
-- Builds and runs a C# application that:
+- Builds and runs an application that:
     - Converts all the code in all of the repositories to `.txt` documents
     - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments
 ```
