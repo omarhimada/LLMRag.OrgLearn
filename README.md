@@ -4,9 +4,10 @@
 ```
 
 - Downloads all public repositories of an organization.
-- Buildes a C# application
-- Converts all the code to `.txt` documents
-- Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments:
+- Builds a C# application
+- Runs the C# application that:
+    - Converts all the code to `.txt` documents
+    - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments:
 ```
 "cs" => "/* ========================================================================================================================= */",
 "vb" => "' ========================================================================================================================== ",
