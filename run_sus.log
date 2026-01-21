@@ -1,0 +1,192 @@
+﻿Listing repositories for grpc...
+Fetching repositories for organization: grpc
+Found 30 repositories
+Repository list has been saved to RepositoryListOutput.txt with a total of 30 entries (after excluding specified repos).
+Created download directory at: C:\Users\adosi\source\repos\LLMRag.OrgLearn/Repos
+
+Downloading repositories to C:\Users\adosi\source\repos\LLMRag.OrgLearn/Repos...
+Downloading repository: https://github.com/grpc/grpc.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'grpc'...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/grpc-go.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'grpc-go'...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/grpc-java.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'grpc-java'...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/grpc-experiments.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc.github.io.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-docker-library.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/homebrew-grpc.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-community.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Resolving deltas: 100% (4699/4699), done.
+Downloading repository: https://github.com/grpc/grpc-docker-library.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'grpc-docker-library'...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/homebrew-grpc.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'homebrew-grpc'...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/grpc-community.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+Cloning into 'grpc-community'...
+remote: Enumerating objects: 362, done.
+remote: Counting objects: 100% (70/70), done.
+remote: Compressing objects: 100% (27/27), done.
+Rremote: Total 362 (delta 53), reused 45 (delta 43), pack-reused 292 (from 2)
+Receiving objects: 100% (362/362), 2.01 MiB | 3.94 MiB/s, done.
+Resolving deltas: 100% (161/161), done.
+Downloading repository: https://github.com/grpc/grpc-web.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+fatal: Remote branch main not found in upstream origin
+Downloading repository: https://github.com/grpc/grpc-swift.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-haskell.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/proposal.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-proto.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-dart.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-node.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-php.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-java-api-checker.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-dotnet.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc.io.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-kotlin.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/test-infra.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-ios.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc.io-docsy.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/psm-interop.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/.allstar.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-swift-protobuf.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-swift-nio-transport.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-swift-extras.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/grpc-swift-2.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+Downloading repository: https://github.com/grpc/bazel-central-registry.git
+Local branch 'main' does not exist.
+Trying branch 'master'.
+Cloning repository with git...
+
+****************************************** ended here despite zero errors, 403 or 429 status codes, suggests interference or dynamic rate limimting
+****************************************** ended at 13 repos instead of 30 (31 excluding .gitignore) repos. I don't think Microsoft / GitHub likes me very much.
+
+Building code-combiner...
+Build completed successfully!
+**********************
+Windows PowerShell transcript end
+End time: 20260120193504
+**********************
