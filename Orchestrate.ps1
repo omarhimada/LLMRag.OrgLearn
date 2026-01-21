@@ -18,6 +18,9 @@ Start-Transcript -Path ".\run.log" -Force
 try {
     .\_callable_AnyaConductor.ps1 -OrgName $orgName
 }
+catch {
+    Write-Host "An error occurred: $_" -ForegroundColor OrangeRed
+}
 finally {
     Stop-Transcript
 }

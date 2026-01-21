@@ -1,24 +1,33 @@
-## Example usage: [dotnet org @ github.com/dotnet](https://github.com/dotnet)
+## Example usage 1: [okta org @ github.com/okta](https://github.com/okta)
+```
+.\Orchestrate.ps1 okta
+```
+- Downloads all 87 public repositories of the Okta organization into a `/Repos` directory
+- Builds and runs an application that:
+    - Converts all the code in all of the repositories to `.txt` documents, then
+    - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments
+    - Then you give the combined output to your local-only LLM so you don't have to rely on multi-billion/trillion dollar companies as AI advances this quickly, absorbing all of your proprietary and confidential information. This is mostly meant for governments and private entities.
+
+## Output:
+`combined_output.txt`
+- `/Repos` directory contains all 87 public Okta repositories
+- `combined_output.txt` is ~202 MB (couple hundred thousand lines of text)
+- Each of the code documents was appended to one another with a delimeter. See the image below:
+
+![Example output from downloading and combining the entirety of the okta github org's repositories into one text document](ExampleOktaRepositories_CombinedAndDelimeted.png)
+
+--- 
+
+## Example usage 2: [dotnet org @ github.com/dotnet](https://github.com/dotnet)
 ```
 .\Orchestrate.ps1 dotnet
 ```
-
-- Downloads all public repositories of an organization into a `/Repos` directory
-- Builds and runs an application that:
-    - Converts all the code in all of the repositories to `.txt` documents
-    - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments
-```
-"cs" => "/* ========================================================================================================================= */",
-"vb" => "' ========================================================================================================================== ",
-"js" or "ts" => "// =========================================================================================================================== ",
-"py" => "# ============================================================================================================================ ",
-"java" => "/** ========================================================================================================================= */",
-_ => "// =========================================================================================================================== ",
-```
-- Then you give your LLM the final `combined_output.txt` document and they'll learn whatever was missing.
+- Tried to download all 277 public repositories of the `dotnet` GitHub org into a `/Repos` directory
+- Got throttled about a third of the way through. I think they suspected odd activity.
+- Added a rate limimter. I won't try again I actually like Microsoft I don't want them to resent me.
 
 ### Example output from the [dotnet org](https://github.com/dotnet)
-#### RepositoryListOutput.txt and downloaded /Repos folder
+#### RepositoryListOutput.txt 
 ```
 android-samples
 cecil

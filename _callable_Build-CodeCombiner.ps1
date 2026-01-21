@@ -30,6 +30,9 @@ class Program {
 		Console.WriteLine($"Combined file created at: {outputPath}");
 
 		Console.WriteLine("Process completed successfully.");
+		Console.WriteLine("Press any key to exit. combined_output.txt has been created.");
+		
+		Console.ReadLine();
 	}
 }
 
@@ -106,16 +109,19 @@ internal class FileInfoEntry {
 "@
 
 # Replace the generated Program.cs with our full code
+$cc = "CodeCombiner"
 $appPath = "CodeCombinerApp"
-$programCsPath = Join-Path -Path $appPath "Program.cs"
-Set-Content -Path $programCsPath -Value $programCode -Force
-
-$csproj = "$appPath/CodeCombinerApp.csproj"
-
-# Build the application (this will use the .NET CLI)
-dotnet build $csproj
+$programDirectory = Join-Path -Path $cc $appPath
+$programCs = Join-Path -Path $programDirectory "Program.cs"
 
 cd ../
+
+Set-Content -Path $programCs -Value $programCode -Force
+
+$csproj = ".\$programDirectory\CodeCombinerApp.csproj"
+
+# Build the application (this will use the .NET CLI)
+dotnet build --configuration Release $csproj
 
 Write-Host $PWD
 

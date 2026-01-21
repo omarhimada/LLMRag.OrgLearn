@@ -38,17 +38,15 @@ foreach ($repo in $repos) {
 
     # Construct GitHub URL from org/repo format
     $repositoryUrl = "https://github.com/$orgName/$repo.git"
+    Write-Host "Waiting 10 seconds to avoid rate limiting..."
+    Start-Sleep -Seconds 10
 
-    Write-Host "Downloading repository: $repositoryUrl" -ForegroundColor Yellow
+    Write-Host "Downloading repository: $orgName org's repository @ $repositoryUrl" -ForegroundColor Yellow
 
     & .\_callable_Download-GitHubRepo.ps1 `
         -RepositoryUrl $repositoryUrl `
         -DestinationPath $downloadPath `
-
-    Start-Sleep -Seconds 31
 }
-
-cd ../
 
 # 3. Build the code-combiner project
 Write-Host "`nBuilding code-combiner..." -ForegroundColor Cyan
