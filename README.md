@@ -1,13 +1,12 @@
-## Example usage:
+## Example usage: [dotnet org @ github.com/dotnet](https://github.com/dotnet)
 ```
 .\Orchestrate.ps1 dotnet
 ```
 
-- Downloads all public repositories of an organization.
-- Builds a C# application
-- Runs the C# application that:
-    - Converts all the code to `.txt` documents
-    - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments:
+- Downloads all public repositories of an organization into a `/Repos` directory
+- Builds and runs an application that:
+    - Converts all the code in all of the repositories to `.txt` documents
+    - Combines all of the `.txt` documents into one document with easily identifiable distinguishing comments
 ```
 "cs" => "/* ========================================================================================================================= */",
 "vb" => "' ========================================================================================================================== ",
@@ -16,9 +15,9 @@
 "java" => "/** ========================================================================================================================= */",
 _ => "// =========================================================================================================================== ",
 ```
+- Then you give your LLM the final `combined_output.txt` document and they'll learn whatever was missing.
 
-
-### Output
+### Example output from the [dotnet org](https://github.com/dotnet)
 #### RepositoryListOutput.txt and downloaded /Repos folder
 ```
 android-samples
