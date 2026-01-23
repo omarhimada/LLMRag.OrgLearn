@@ -15,18 +15,12 @@
 - Each of the code documents was appended to one another with a delimeter. See the image below:
 
 ![Example output from downloading and combining the entirety of the okta github org's repositories into one text document](ExampleOktaRepositories_CombinedAndDelimeted.png)
-
 --- 
 
 ## Example usage 2: [dotnet org @ github.com/dotnet](https://github.com/dotnet)
 ```
 .\Orchestrate.ps1 dotnet
 ```
-- Tried to download all 277 public repositories of the `dotnet` GitHub org into a `/Repos` directory
-- Got throttled about a third of the way through. I think they suspected odd activity.
-- Added a rate limimter. I won't try again I actually like Microsoft I don't want them to resent me.
-
-### Example output from the [dotnet org](https://github.com/dotnet)
 #### RepositoryListOutput.txt 
 ```
 android-samples
